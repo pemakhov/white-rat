@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>White Rat</title>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        .container {
+            position: relative;
+            width: 720px;
+            height: 420px;
+            margin: 100px auto 0 auto;
+        }
+
+        .piece {
+            position: absolute;
+            background-color: white;
+            -webkit-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+        }
+
+        .shadow {
+            position: absolute;
+            background-color: black;
+        }
+
+        #a0 {
+            width: 236px;
+            height: 192px;
+            top: 70px;
+            left: 218px;
+            border-radius: 78% 22% 20% 10%;
+        }
+
+        #a1 {
+            width: 50px;
+            height: 50px;
+            top: 80px;
+            right: 14px;
+            border-radius: 72% 14% 72% 1%;
+            transform: rotate(45deg);
+        }
+
+        #a2 {
+            width: 138px;
+            height: 30px;
+            top: 60px;
+            right: 20px;
+            border-radius: 52% 26% 10% 10%;
+            transform: rotate(21deg);
+        }
+
+        #a3 {
+            width: 80px;
+            height: 30px;
+            top: 113px;
+            right: 20px;
+            border-radius: 10% 10% 33% 65%;
+            transform: rotate(-26deg);
+        }
+
+        #a4 {
+            width: 109px;
+            height: 215px;
+            top: 52px;
+            right: 148px;
+            border-radius: 10% 10% 10% 10%;
+            transform: rotate(39deg);
+        }
+
+        #a5 {
+            width: 90px;
+            height: 90px;
+            top: 62px;
+            right: 61px;
+            border-radius: 42% 20% 5% 20%;
+            transform: rotate(79deg);
+        }
+
+        #a6 {
+            width: 51px;
+            height: 33px;
+            top: 7px;
+            right: 129px;
+            border-radius: 41% 58% 32% 25%;
+            transform: rotate(50deg);
+        }
+
+        #a7 {
+            width: 55px;
+            height: 55px;
+            top: 32px;
+            right: 165px;
+            border-radius: 50% 50% 50% 50%;
+        }
+
+        #a8 {
+            width: 51px;
+            height: 33px;
+            top: 40px;
+            right: 127px;
+            border-radius: 10% 10% 10% 10%;
+            transform: rotate(-26deg);
+        }
+
+        #a9 {
+            width: 80px;
+            height: 200px;
+            top: 17px;
+            right: 193px;
+            border-radius: 67% 39% 10% 10%;
+            transform: rotate(76deg);
+        }
+
+        #a10 {
+            width: 138px;
+            height: 100px;
+            top: 68px;
+            right: 245px;
+            border-radius: 65% 10% 10% 10%;
+            transform: rotate(13deg);
+        }
+
+        #a11 {
+            width: 200px;
+            height: 200px;
+            top: 119px;
+            right: 304px;
+            border-radius: 60% 10% 50% 26%;
+            transform: rotate(12deg);
+        }
+
+        #a12 {
+            width: 50px;
+            height: 100px;
+            top: 195px;
+            right: 285px;
+            border-radius: 10% 10% 10% 10%;
+            transform: rotate(61deg);
+        }
+
+        #a13 {
+            width: 256px;
+            height: 151px;
+            bottom: 8px;
+            left: 0;
+            border-radius: 41% 10% 5% 52%;
+            transform: rotate(2deg);
+        }
+
+        #a14 {
+            width: 256px;
+            height: 114px;
+            bottom: 24px;
+            left: 20px;
+            border-radius: 47% 34% 0% 43%;
+            transform: rotate(7deg);
+        }
+
+        #a15 {
+            width: 36px;
+            height: 31px;
+            bottom: 87px;
+            right: 384px;
+            border-radius: 10% 8% 53% 11%;
+            transform: rotate(121deg);
+        }
+
+        #a16 {
+            width: 25px;
+            height: 94px;
+            bottom: 24px;
+            right: 342px;
+            border-radius: 0% 36% 0% 0%;
+            transform: rotate(117deg);
+        }
+
+        #a17 {
+            width: 30px;
+            height: 48px;
+            bottom: 37px;
+            right: 307px;
+            border-radius: 37% 40% 20% 64%;
+            transform: rotate(105deg);
+        }
+
+        #a18 {
+            width: 29px;
+            height: 65px;
+            bottom: 55px;
+            right: 199px;
+            border-radius: 37% 40% 38% 31%;
+            transform: rotate(120deg);
+        }
+
+        #a19 {
+            width: 55px;
+            height: 79px;
+            bottom: 128px;
+            right: 216px;
+            border-radius: 10% 52% 6% 10%;
+            transform: rotate(50deg);
+        }
+
+        #a20 {
+            width: 52px;
+            height: 64px;
+            bottom: 99px;
+            right: 202px;
+            border-radius: 10% 5% 13% 10%;
+            transform: rotate(60deg);
+        }
+
+        #a21 {
+            width: 52px;
+            height: 64px;
+            bottom: 99px;
+            right: 174px;
+            border-radius: 11% 5% 32% 67%;
+            transform: rotate(32deg);
+        }
+
+        #a22,
+        #a23,
+        #a24,
+        #a25,
+        #a26,
+        #a27,
+        #a28,
+        #a29,
+        #a30 {
+            width: 3px;
+            height: 80px;
+            border-radius: 50% 50% 50% 50%;
+        }
+
+        #a22 {
+            top: 120px;
+            right: 86px;
+            transform: rotate(23deg);
+        }
+
+        #a23 {
+            top: 121px;
+            right: 72px;
+            transform: rotate(11deg);
+        }
+
+        #a24 {
+            top: 105px;
+            right: 49px;
+            transform: rotate(9deg);
+        }
+
+        #a25 {
+            top: 107px;
+            right: 32px;
+            transform: rotate(-7deg);
+        }
+
+        #a26 {
+            top: 90px;
+            right: 23px;
+            transform: rotate(-20deg);
+        }
+
+        #a27 {
+            top: 53px;
+            right: 59px;
+            transform: rotate(21deg);
+        }
+
+        #a28 {
+            top: 46px;
+            right: 46px;
+            transform: rotate(33deg);
+        }
+
+        #a29 {
+            top: 42px;
+            right: 30px;
+            transform: rotate(40deg);
+        }
+
+        #a30 {
+            top: 62px;
+            right: 40px;
+            transform: rotate(63deg);
+        }
+
+        #a0.active,
+        #a1.active,
+        #a2.active,
+        #a3.active,
+        #a4.active,
+        #a5.active,
+        #a6.active,
+        #a7.active,
+        #a8.active,
+        #a9.active,
+        #a10.active,
+        #a11.active,
+        #a12.active,
+        #a13.active,
+        #a15.active,
+        #a16.active,
+        #a17.active,
+        #a18.active,
+        #a19.active,
+        #a20.active,
+        #a22.active,
+        #a23.active,
+        #a24.active,
+        #a25.active,
+        #a26.active,
+        #a27.active,
+        #a28.active,
+        #a29.active,
+        #a30.active {
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+        }
+
+        #a14.active,
+        #a21.active {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="piece" id="a0"></div>
+    <div class="piece" id="a1"></div>
+    <div class="piece" id="a2"></div>
+    <div class="piece" id="a3"></div>
+    <div class="piece" id="a4"></div>
+    <div class="piece" id="a5"></div>
+    <div class="piece" id="a6"></div>
+    <div class="piece" id="a7"></div>
+    <div class="piece" id="a8"></div>
+    <div class="piece" id="a9"></div>
+    <div class="piece" id="a10"></div>
+    <div class="piece" id="a11"></div>
+    <div class="piece" id="a12"></div>
+    <div class="piece" id="a13"></div>
+    <div class="piece shadow" id="a14"></div>
+    <div class="piece" id="a15"></div>
+    <div class="piece" id="a16"></div>
+    <div class="piece" id="a17"></div>
+    <div class="piece" id="a18"></div>
+    <div class="piece" id="a19"></div>
+    <div class="piece" id="a20"></div>
+    <div class="piece shadow" id="a21"></div>
+    <div class="piece" id="a22"></div>
+    <div class="piece" id="a23"></div>
+    <div class="piece" id="a24"></div>
+    <div class="piece" id="a25"></div>
+    <div class="piece" id="a26"></div>
+    <div class="piece" id="a27"></div>
+    <div class="piece" id="a28"></div>
+    <div class="piece" id="a29"></div>
+    <div class="piece" id="a30"></div>
+</div>
+<script
+        src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+        crossorigin="anonymous">
+</script>
+<script>
+    $piece = $('.piece');
+    $('.container').hover(function () {
+            $piece.addClass('active');
+        }, function () {
+            $piece.removeClass('active');
+        }
+    );
+</script>
+</body>
+</html>
